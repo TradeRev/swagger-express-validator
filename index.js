@@ -10,6 +10,7 @@ let pathObjects = [];
 let options = {};
 let ajvRequestOptions;
 let ajvResponseOptions;
+let errorResponseObject = {};
 
 const buildPathObjects = paths => _.map(paths, (pathDef, path) => ({
   definition: _.get(options.schema, ['paths', path]),
@@ -190,6 +191,8 @@ const validateResponse = (req, res, next) => {
           if (options.returnResponseErrors) {
             err.errors = [{ message: 'Invalid response format' }];
           }
+          res.status(400);
+          res.json(errorResponseObject);
           next(resultError);
           return;
         }
@@ -209,6 +212,8 @@ const validateResponse = (req, res, next) => {
           if (options.returnResponseErrors) {
             err.errors = validator.errors;
           }
+          res.status(400);
+          res.json(errorResponseObject);
           next(err);
         }
       } else {
@@ -259,7 +264,7 @@ const validateRequest = (req, res, next) => {
           err.errors = validator.errors;
         }
         res.status(400);
-        res.json(err);
+        res.json(errorResponseObject);
       }
     } else {
       debug('Request validation success');
@@ -318,7 +323,7 @@ const init = (opts = {}) => {
     debug('Please provide schema option to properly initialize middleware');
     pathObjects = [];
   }
-  ({ ajvRequestOptions, ajvResponseOptions } = opts);
+  ({ ajvRequestOptions, ajvResponseOptions, errorResponseObject } = opts);
 
   return validate;
 };
