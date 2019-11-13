@@ -191,8 +191,10 @@ const validateResponse = (req, res, next) => {
           if (options.returnResponseErrors) {
             err.errors = [{ message: 'Invalid response format' }];
           }
-          res.status(400);
-          res.json(errorResponseObject);
+          if (errorResponseObject) {
+            res.status(400);
+            res.json(errorResponseObject);
+          }
           next(resultError);
           return;
         }
@@ -212,8 +214,10 @@ const validateResponse = (req, res, next) => {
           if (options.returnResponseErrors) {
             err.errors = validator.errors;
           }
-          res.status(400);
-          res.json(errorResponseObject);
+          if (errorResponseObject) {
+            res.status(400);
+            res.json(errorResponseObject);
+          }
           next(err);
         }
       } else {
@@ -264,7 +268,7 @@ const validateRequest = (req, res, next) => {
           err.errors = validator.errors;
         }
         res.status(400);
-        res.json(errorResponseObject);
+        res.json(errorResponseObject ? errorResponseObject : err);
       }
     } else {
       debug('Request validation success');
