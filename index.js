@@ -121,6 +121,11 @@ const validateResponse = (req, res, next) => {
         int32: valueValidator.isInt,
         int64: valueValidator.isInt,
         url: valueValidator.isURL,
+        dateTime: valueValidator.isAlphanumeric,
+        float: valueValidator.isDecimal,
+        password: valueValidator.isAlphanumeric,
+        date: valueValidator.isAlphanumeric,
+        double: valueValidator.isDecimal
       },
     },
     ajvResponseOptions
@@ -239,6 +244,11 @@ const validateRequest = (req, res, next) => {
         int32: valueValidator.isInt,
         int64: valueValidator.isInt,
         url: valueValidator.isURL,
+        dateTime: valueValidator.isAlphanumeric,
+        float: valueValidator.isDecimal,
+        password: valueValidator.isAlphanumeric,
+        date: valueValidator.isAlphanumeric,
+        double: valueValidator.isDecimal
       },
     }, ajvRequestOptions
   ));
@@ -306,6 +316,7 @@ const validate = (req, res, next) => {
  * @param opts.responseValidationFn {function}
  * @param [opts.ajvRequestOptions] {object}
  * @param [opts.ajvResponseOptions] {object}
+ * @param opts.errorResponseObject {object}
  * @returns {function(*=, *=, *=)}
  */
 const init = (opts = {}) => {
@@ -319,6 +330,7 @@ const init = (opts = {}) => {
     allowNullable: true,
     ajvRequestOptions: {},
     ajvResponseOptions: {},
+    errorResponseObject: {}
   });
 
   if (options.schema) {
