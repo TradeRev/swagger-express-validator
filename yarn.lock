@@ -153,9 +153,9 @@ acorn-jsx@^5.0.0:
   integrity sha512-HJ7CfNHrfJLlNTzIEUTj43LNWGkqpRLxm3YjAlcD0ACydk9XynzYsCBHxut+iqt+1aBXkx9UP/w/ZqMr13XIzg==
 
 acorn@^6.0.7:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.1.1.tgz#7d25ae05bb8ad1f9b699108e1094ecd7884adc1f"
-  integrity sha512-jPTiwtOxaHNaAPg/dmrJ/beuzLRnXtB0kQPQ8JpotKJgTB6rX6c8mlf315941pyjBSaPg8NHXS9fhP4u17DpGA==
+  version "6.4.2"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.2.tgz#35866fd710528e92de10cf06016498e47e39e1e6"
+  integrity sha512-XtGIhXwF8YM8bJhGxG5kXgjkEuNGLTkoYqVE+KMR+aspr4KGYmKYg7yUe3KghyQ9yheNwLnjmzh/7+gfDBmHCQ==
 
 ajv@^6.10.2:
   version "6.10.2"
@@ -2271,6 +2271,17 @@ supports-color@^5.3.0:
   integrity sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==
   dependencies:
     has-flag "^3.0.0"
+
+swagger-express-validator@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/swagger-express-validator/-/swagger-express-validator-1.0.2.tgz#64b07c924ad0505f2ddf466758888e482bb3ae95"
+  integrity sha512-uNP3wjzAJTyu0CcXq2O8yJPCDcRLMR/amf0oRkN8syRBqUIQhBcYFpyQC+1PR1TNa8gxkhWdpjaDG3bbCKZ0dA==
+  dependencies:
+    ajv "^6.10.2"
+    debug "3.2.6"
+    lodash "^4.17.15"
+    path-to-regexp "2.4.0"
+    validator "10.11.0"
 
 table@^5.2.3:
   version "5.2.3"
