@@ -2272,6 +2272,17 @@ supports-color@^5.3.0:
   dependencies:
     has-flag "^3.0.0"
 
+swagger-express-validator@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/swagger-express-validator/-/swagger-express-validator-1.0.2.tgz#64b07c924ad0505f2ddf466758888e482bb3ae95"
+  integrity sha512-uNP3wjzAJTyu0CcXq2O8yJPCDcRLMR/amf0oRkN8syRBqUIQhBcYFpyQC+1PR1TNa8gxkhWdpjaDG3bbCKZ0dA==
+  dependencies:
+    ajv "^6.10.2"
+    debug "3.2.6"
+    lodash "^4.17.15"
+    path-to-regexp "2.4.0"
+    validator "10.11.0"
+
 table@^5.2.3:
   version "5.2.3"
   resolved "https://registry.yarnpkg.com/table/-/table-5.2.3.tgz#cde0cc6eb06751c009efab27e8c820ca5b67b7f2"
@@ -2345,9 +2356,9 @@ uri-js@^4.2.2:
     punycode "^2.1.0"
 
 urijs@^1.19.0:
-  version "1.19.1"
-  resolved "https://registry.yarnpkg.com/urijs/-/urijs-1.19.1.tgz#5b0ff530c0cbde8386f6342235ba5ca6e995d25a"
-  integrity sha512-xVrGVi94ueCJNrBSTjWqjvtgvl3cyOTThp2zaMaFNGp3F542TR6sM3f2o8RqZl+AwteClSVmoCyt0ka4RjQOQg==
+  version "1.19.8"
+  resolved "https://registry.yarnpkg.com/urijs/-/urijs-1.19.8.tgz#ee0407a18528934d3c383e691912f47043a58feb"
+  integrity sha512-iIXHrjomQ0ZCuDRy44wRbyTZVnfVNLVo3Ksz1yxNyE5wV1IDZW2S5Jszy45DTlw/UdsnRT7DyDhIz7Gy+vJumw==
 
 util-deprecate@~1.0.1:
   version "1.0.2"
